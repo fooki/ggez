@@ -628,7 +628,7 @@ impl<'a> InternalCanvas<'a> {
             let (image_bind, _) = BindGroupBuilder::new()
                 .image(&view, wgpu::ShaderStages::FRAGMENT)
                 .sampler(
-                    &self.sampler_cache.get(&self.wgpu.device, self.curr_sampler),
+                    &self.sampler_cache.get(&self.wgpu.device, self.next_sampler),
                     wgpu::ShaderStages::FRAGMENT,
                 )
                 .create(&self.wgpu.device, self.bind_group_cache);
